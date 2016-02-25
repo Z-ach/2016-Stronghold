@@ -59,9 +59,9 @@ public interface RobotMap {
 	//PID Variables
 	public static final double ENC_DISTANCE_PER_PULSE = 0.005;
 	//placeholders
-	public static int P = 1;
-	public static int I = 1;
-	public static int D = 1;
+	public static int kP = 1;
+	public static int kI = 1;
+	public static int kD = 1;
 	public static final int ABS_TOL = 1;
 	public static double SCALE = 1;
 	public static final double L_180 = 1;

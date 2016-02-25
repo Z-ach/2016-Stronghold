@@ -16,7 +16,7 @@ public class PID  extends PIDSubsystem implements RobotMap{
 	
 	
 	public PID(String name, CANTalon motor1, CANTalon motor2, Encoder enc){
-		super(name, P, I, D);
+		super(name, kP, kI, kD);
 		this.motor1 = motor1;
 		this.motor2 = motor2;
 		this.enc = enc;
@@ -25,7 +25,7 @@ public class PID  extends PIDSubsystem implements RobotMap{
 		this.getPIDController().setAbsoluteTolerance(ABS_TOL);
 	}
 	public PID(String name, CANTalon motor1, Encoder enc){
-		super(name, P, I, D);
+		super(name, kP, kI, kD);
 		this.motor1 = motor1;
 		this.enc = enc;
 		enc.setDistancePerPulse(ENC_DISTANCE_PER_PULSE);
@@ -47,7 +47,7 @@ public class PID  extends PIDSubsystem implements RobotMap{
 
 	 public void reInit(){
 	    	getPIDController().reset();
-	    	getPIDController().setPID(SmartDashboard.getNumber("kP"), RobotMap.I, SmartDashboard.getNumber("kD"));
+	    	getPIDController().setPID(SmartDashboard.getNumber("kP"), RobotMap.kI, SmartDashboard.getNumber("kD"));
 	    	this.enc.reset();
 	 }
 	
