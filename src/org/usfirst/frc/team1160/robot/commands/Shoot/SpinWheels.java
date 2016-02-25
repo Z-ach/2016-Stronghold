@@ -19,16 +19,12 @@ public class SpinWheels extends Command implements RobotMap{
 
 	@Override
 	protected void execute() {
+		Robot.shoot.setFlywheel(rpm);
 	}
 
 	@Override
 	protected boolean isFinished() {
-		if(timeElapsed>=FIRING_TIME){
-			return true;
-		}
-		
-		//return Robot.shoot.isDone(rpm);
-		return false;
+		return Robot.shoot.isComplete(rpm);
 	}
 
 	@Override

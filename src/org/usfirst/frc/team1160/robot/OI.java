@@ -51,7 +51,6 @@ public class OI implements RobotMap{
 	}
 	
 	public void tieButtons(){
-		//detect.whenPressed(new Detect());
 		fire.whenPressed(new FireSequence());
 		stop.whenPressed(new StopWheels());
 		intake.whenPressed(new Intake(INTAKE_SPEED));
@@ -61,7 +60,6 @@ public class OI implements RobotMap{
 		see.whenPressed(new Distance(0));
 		cradleup.whenPressed(new CradlePush());
 		cradledown.whenPressed(new CradleHold());
-		System.out.println("WOY");
 	}
 	
 	public ModifiedJoystick getStick(){
